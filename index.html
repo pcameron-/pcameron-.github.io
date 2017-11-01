@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+<div class="home">
+    {% for post in site.posts %}
+        <div class="card">
+            <div class="card-block">
+                <h4 class="card-title">
+                    <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a>
+                </h4>
+                <p class="card-text">{{ post.content }}</p>
+            </div>
+            <div class="card-footer text-muted">
+                <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }}</time>
+                {% if post.author %}
+                    <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                        <span itemprop="name">{{ post.author }}</span>
+                    </span>
+                {%endif %}
+            </div>
+        </div>
+    {% endfor %}
+
+    <p class="rss-subscribe">subscribe
+        <a href="{{ " /feed.xml" | prepend: site.baseurl }}">via RSS</a>
+    </p>
+</div>
