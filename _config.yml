@@ -26,3 +26,7 @@ github_username:  pcameron-
 # Build settings
 markdown: kramdown
 github: [metadata]
+
+collections:
+  projects:
+    output: true
