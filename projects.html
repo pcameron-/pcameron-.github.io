@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: project
 title: Projects
 permalink: /projects/
 ---
@@ -22,7 +22,7 @@ permalink: /projects/
         <a href="/projects/github/bootstrap-modal">Bootstrap Modal</a> (Work in progress)
     </div>
 </div>
-<div class="card mb-3">
+<div class="card">
     <div class="card-header">
         DigiPen
     </div>
@@ -32,7 +32,7 @@ permalink: /projects/
         {% assign sorted_projects = (site.projects | sort: 'sort-order') %}
         {% assign total_rows = sorted_projects | size | divided_by: projects_per_line %}
         {% for i in (1..total_rows) %}
-        <div class="row">
+        <div class="row {% if i != 1 %}mt-3{% endif %}">
             {% for j in (1..projects_per_line) %}
             {% assign x = j | minus: 1 %}
             {% assign y = i | minus: 1 %}
@@ -41,13 +41,17 @@ permalink: /projects/
             {% assign project = sorted_projects[index] %}
             <div class="col-sm-6">
                 <div class="card">
-                    <img class="card-img-top" src="{% if project.card.asset-folder %}/img/projects/{{ project.card.asset-folder }}/tile.png{% else %}https://placehold.it/600x300{% endif %}" />
+                    {% if project.card.asset-folder %}
+                    <img class="card-img-top" src="/img/projects/{{ project.card.asset-folder }}/tile.png" />
+                    {% endif %}
                     <div class="card-body">
                         <h4 class="card-title">
                             {{ project.card.title }}
                         </h4>
                         <p class="card-text">{{ project.card.short-description }}</p>
+                        {% if project.permalink %}
                         <a href="{{ project.permalink }}" class="btn btn-info btn-block">View Project</a>
+                        {% endif %}
                     </div>
                 </div>
             </div>

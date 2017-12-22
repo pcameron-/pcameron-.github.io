@@ -1,10 +1,11 @@
 body {
-    margin-bottom: 260px;
+    margin-top: 56px;
 }
 
-#body-content {
+.body-content {
     background-color: #fff;
     border: 1px solid #e7e7e7;
+    border-top: none;
     box-shadow: 0 17px 50px 0 rgba(0, 0, 0, .19);
     border-radius: 0 0 6px 6px;
 }
