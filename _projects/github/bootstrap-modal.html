@@ -1,0 +1,113 @@
+---
+layout: project
+---
+
+<h2>Bootstrap Modal</h2>
+<a href="https://github.com/pcameron-/bootstrap-modal" target="_blank">View on GitHub</a>
+<br>
+<br>
+<div class="card">
+    <div class="card-header">
+        Options
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label for="titleInput">Title</label>
+                    <input type="text" class="form-control" id="titleInput" placeholder="Enter title">
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <label>Close Button</label>
+                <div class="checkbox">
+                    <label>
+                        <input id="showHeaderCloseButton" type="checkbox" checked=""> Show close button on header
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input id="showFooterCloseButton" type="checkbox" checked=""> Show close button on footer
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <label>Backdrop</label>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="backdropOptionRadios" value="true" checked=""> true
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="backdropOptionRadios" value="false"> false
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="backdropOptionRadios" value="static"> static
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <label>Keyboard</label>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="keyboardOptionRadios" value="true" checked=""> true
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="keyboardOptionRadios" value="false"> false
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="bodyInput">Body</label>
+                    <textarea class="form-control" id="bodyInput" placeholder="Enter body" rows="3"></textarea>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="footerInput">Footer</label>
+                    <textarea class="form-control" id="footerInput" placeholder="Enter footer" rows="3">&lt;div class="pull-left"&gt;Additional footer content&lt;/div&gt;</textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer">
+        <button id="createModalBtn" class="btn btn-primary">Create Modal</button>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+<script src="/scripts/bootstrap.min.js"></script>
+<script src="/scripts/bootstrap-modal.js"></script>
+<script>
+    $.bootstrap.configureModalDefaults({});
+
+    $('#createModalBtn').click(function () {
+        var modalOptions = {
+            title: $('#titleInput').val(),
+            backdrop: $('input[name="backdropOptionRadios"]:checked').val(),
+            keyboard: $('input[name="keyboardOptionRadios"]:checked').val(),
+            closeButton: {
+                showOnHeader: $('#showHeaderCloseButton').is(':checked'),
+                showOnFooter: $('#showFooterCloseButton').is(':checked')
+            },
+            body: $('#bodyInput').val(),
+            footer: $('#footerInput').val()
+        };
+
+        var b = $.bootstrap.modal(modalOptions).show();
+
+        //setTimeout(function () { b.setTitle('TESTING CHANGE') }, 2000);
+    });
+
+    //$.bootstrap.modal.alert('Testing out an alert with the same code for a full modal', function() {
+    //  alert('something happened');
+    //});
+</script>

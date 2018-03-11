@@ -1,0 +1,24 @@
+<div class="projects-grid">
+    {% for project in include.projects %}
+    <div class="card">
+        {% if project.asset-folder %}
+        <img class="card-img-top" src="/img/projects/{{ project.asset-folder }}/tile.png" />
+        {% endif %}
+        <div class="card-body">
+            <h4 class="card-title">
+                {{ project.name }}
+            </h4>
+            <p class="card-text">
+                {% if project.short-description %}
+                    {{ project.short-description }}
+                {% else %}
+                    Coming soon.
+                {% endif %}
+            </p>
+            {% if project.permalink %}
+            <a href="{{ project.permalink }}" class="btn btn-info btn-block">View Project</a>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+</div>

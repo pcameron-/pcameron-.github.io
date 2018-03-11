@@ -14,49 +14,24 @@ permalink: /projects/
         click on the links below to jump to the project.
     </div>
 </div>
-<div class="card mb-3">
+{% for group in site.data.projects %}
+{% if forloop.last != true %}
+    {% assign c = "mb-3" %}
+{% else %}
+    {% assign c = "" %}
+{% endif %}
+<div class="card {{ c }}">
     <div class="card-header">
-        GitHub Projects
+        {{ group.name }}
     </div>
     <div class="card-body">
-        <a href="/projects/github/bootstrap-modal">Bootstrap Modal</a> (Work in progress)
-    </div>
-</div>
-<div class="card">
-    <div class="card-header">
-        DigiPen
-    </div>
-    <div class="card-body">
-        <h2>Games</h2>
-        {% assign projects_per_line = 2 %}
-        {% assign sorted_projects = (site.projects | sort: 'sort-order') %}
-        {% assign total_rows = sorted_projects | size | divided_by: projects_per_line %}
-        {% for i in (1..total_rows) %}
-        <div class="row {% if i != 1 %}mt-3{% endif %}">
-            {% for j in (1..projects_per_line) %}
-            {% assign x = j | minus: 1 %}
-            {% assign y = i | minus: 1 %}
-            {% assign tmp = projects_per_line | times: y %}
-            {% assign index = x | plus: tmp %}
-            {% assign project = sorted_projects[index] %}
-            <div class="col-sm-6">
-                <div class="card">
-                    {% if project.card.asset-folder %}
-                    <img class="card-img-top" src="/img/projects/{{ project.card.asset-folder }}/tile.png" />
-                    {% endif %}
-                    <div class="card-body">
-                        <h4 class="card-title">
-                            {{ project.card.title }}
-                        </h4>
-                        <p class="card-text">{{ project.card.short-description }}</p>
-                        {% if project.permalink %}
-                        <a href="{{ project.permalink }}" class="btn btn-info btn-block">View Project</a>
-                        {% endif %}
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
+        {% for category in group.categories %}
+        {% if forloop.first != true %}
+            <hr />
+        {% endif %}
+        <h2>{{ category.name }}</h2>
+        {% include projects-grid.html projects=category.projects %}
         {% endfor %}
     </div>
 </div>
+{% endfor %}

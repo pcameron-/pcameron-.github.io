@@ -34,3 +34,9 @@ body {
 .contact-list {
     list-style-type: none;
 }
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+}

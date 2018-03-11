@@ -1,0 +1,35 @@
+- name: GitHub Projects
+  categories:
+    - name: Libraries
+      projects:
+        - name: Bootstrap Modal
+          short-description: Work in progress.
+          permalink: /projects/github/bootstrap-modal
+
+- name: DigiPen
+  categories:
+    - name: Games
+      projects:
+        - name: Phobia
+          short-description: You are a monster trying to scare people.
+          asset-folder: phobia
+          permalink: /projects/games/phobia
+
+        - name: Super Xtreme Kart Racing 2
+          short-description: The most xtreme kart racing game ever!
+          asset-folder: sxkr2
+          permalink: /projects/games/sxkr2
+
+        - name: Dealer Hero
+          short-description: Dealing cards simulator.
+          asset-folder: dealer-hero
+          permalink: /projects/games/dealer-hero
+
+        - name: DigiBoy
+        - name: Defend The Rope
+    - name: Tools / Other
+      projects:
+        - name: Defend The Rope (Map Editor)
+        - name: Sampling Profiler
+        - name: Curve Editor
+        - name: Software Rasterizer
