@@ -1,18 +1,13 @@
-<nav class="navbar navbar-dark bg-dark">
+<nav class="navbar fixed-bottom navbar-dark bg-dark">
   <div class="container text-light">
     <p class="text-center" style="margin: 20px 0;">pcameron.com</p>
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
+    <div>
+      <div>
+        <h6>Contact:</h6>
         <ul class="contact-list">
-          <li>{{ site.title }}</li>
           <li>
-            <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+            {% include icon-email.html email=site.email %}
           </li>
-        </ul>
-      </div>
-
-      <div class="footer-col footer-col-2">
-        <ul class="social-media-list">
           {% if site.github_username %}
           <li>
             {% include icon-github.html username=site.github_username %}
@@ -20,8 +15,7 @@
           {% endif %}
         </ul>
       </div>
-
-      <div class="footer-col footer-col-3">
+      <div>
         <p>{{ site.description }}</p>
       </div>
     </div>

@@ -1,5 +1,7 @@
 body {
     margin-top: 56px;
+    padding-bottom: 1em;
+    margin-bottom: 147px;
 }
 
 .body-content {
@@ -8,4 +10,27 @@ body {
     border-top: none;
     box-shadow: 0 17px 50px 0 rgba(0, 0, 0, .19);
     border-radius: 0 0 6px 6px;
+}
+
+.svg-icon {
+    display: inline-flex;
+    align-self: center;
+    position: relative;
+    height: 1em;
+    width: 1em;
+}
+
+.svg-icon svg {
+    height: 1em;
+    width: 1em;
+    fill: currentColor;
+}
+
+.svg-icon.svg-baseline svg {
+    bottom: -0.125em;
+    position: absolute;
+}
+
+.contact-list {
+    list-style-type: none;
 }
