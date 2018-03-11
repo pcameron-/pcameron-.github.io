@@ -20,7 +20,7 @@
           asset-folder: sxkr2
           permalink: /projects/games/sxkr2
 
-        - name: Dealer Hero
+        - name: Dealer Hero (Wii)
           short-description: Dealing cards simulator.
           asset-folder: dealer-hero
           permalink: /projects/games/dealer-hero
