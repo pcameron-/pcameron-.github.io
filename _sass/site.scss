@@ -1,5 +1,5 @@
 body {
-    margin-top: 56px;
+    margin-top: 66px;
     padding-bottom: 1em;
     margin-bottom: 147px;
 }
@@ -37,6 +37,11 @@ body {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: 10px;
+}
+
+.project-full-size {
+    grid-row: span 2;
+    grid-column: span 2;
 }

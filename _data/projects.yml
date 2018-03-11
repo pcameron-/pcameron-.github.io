@@ -3,7 +3,7 @@
     - name: Libraries
       projects:
         - name: Bootstrap Modal
-          short-description: Work in progress.
+          short-description: JavaScript library helper to create Bootstrap modals on demand.
           permalink: /projects/github/bootstrap-modal
 
 - name: DigiPen
@@ -26,10 +26,24 @@
           permalink: /projects/games/dealer-hero
 
         - name: DigiBoy
+          short-description: Gameboy color game written in assembly.
+
         - name: Defend The Rope
     - name: Tools / Other
       projects:
-        - name: Defend The Rope (Map Editor)
         - name: Sampling Profiler
+          short-description: Determine what function takes the most time.
+          asset-folder: profiler
+          permalink: /projects/tools/sampling-profiler
+
         - name: Curve Editor
+          short-description: View different types of splines and curves.
+          asset-folder: curve-editor
+          permalink: /projects/tools/curve-editor
+
         - name: Software Rasterizer
+          short-description: 3D software rasterizer just using SetPixel.
+          asset-folder: rasterizer
+          permalink: /projects/tools/software-rasterizer
+
+        - name: Defend The Rope (Map Editor)
