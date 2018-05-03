@@ -1,0 +1,16 @@
+{
+    "dir": "ltr",
+    "lang": "en",
+    "name": "pcameron.com",
+    "scope": "/",
+    "display": "browser",
+    "start_url": "https://pcameron.com/",
+    "short_name": "pcameron.com",
+    "theme_color": "transparent",
+    "description": "Personal site that contains past and current personal projects.\n",
+    "orientation": "any",
+    "background_color": "transparent",
+    "related_applications": [],
+    "prefer_related_applications": false,
+    "icons": []
+}
