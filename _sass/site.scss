@@ -45,3 +45,27 @@ body {
     grid-row: span 2;
     grid-column: span 2;
 }
+
+@media (max-width: 992px) and (min-width: 520px) {
+    .project-full-size {
+        grid-row: span 4;
+        grid-column: span 4;
+    }
+
+    .project-small-size {
+        grid-row: span 2;
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 520px) {
+    .project-full-size {
+        grid-row: span 4;
+        grid-column: span 4;
+    }
+
+    .project-small-size {
+        grid-row: span 4;
+        grid-column: span 4;
+    }
+}
