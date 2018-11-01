@@ -1,0 +1,7 @@
+---
+layout: post
+title: "Halloween Update"
+date: 2018-03-11 21:50:28 -0400
+categories: jekyll update
+---
+Nothing quite like working on 5 pull requests for Hacktoberfest 2018!
