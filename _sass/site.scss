@@ -1,7 +1,19 @@
-body {
-    margin-top: 66px;
-    padding-bottom: 1em;
-    margin-bottom: 147px;
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 66px auto 212px;
+}
+
+.header {
+    grid-column: span 12;
+}
+
+.content {
+    grid-column: span 12;
+}
+
+.footer {
+    grid-column: span 12;
 }
 
 .body-content {

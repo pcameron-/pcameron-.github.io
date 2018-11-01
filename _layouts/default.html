@@ -3,13 +3,17 @@
 {% include head.html %}
 
 <body>
-  {% include header.html %}
-
-  <div class="container">
-    {{ content }}
+  <div class="wrapper">
+    <div class="header">{% include header.html %}</div>
+    <div class="content">
+      <div class="container">
+        {{ content }}
+      </div>
+    </div>
+    <div class="footer">
+        {% include footer.html %}
+    </div>
   </div>
-
-  {% include footer.html %}
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
   <script src="/scripts/bootstrap.min.js"></script>
