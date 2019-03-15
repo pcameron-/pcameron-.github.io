@@ -1,16 +1,36 @@
 ---
-layout: default
+layout: project
+title: 
 ---
-<div class="home">
-  <div class="post-list">
-    {% for post in site.posts %}
-      {{post}}
-      {% if forloop.last != true %}
-        <hr />
-      {% endif %}
-    {% endfor %}
-  </div>
-  <p class="rss-subscribe">subscribe
-    <a href="{{ " /feed.xml " | prepend: site.baseurl }}">via RSS</a>
-  </p>
+
+<div class="card border-info mb-3">
+    <div class="card-header text-white bg-info">
+        Project List
+    </div>
+    <div class="card-body">
+        The projects listed below are game projects, tools, and demos that I have written. I have released partial code for some
+        of my projects. If you want to see more examples of code, send me an email. If you want to see a paticular project,
+        click on the links below to jump to the project.
+    </div>
 </div>
+{% for group in site.data.projects %}
+{% if forloop.last != true %}
+    {% assign c = "mb-3" %}
+{% else %}
+    {% assign c = "" %}
+{% endif %}
+<div class="card {{ c }}">
+    <div class="card-header">
+        {{ group.name }}
+    </div>
+    <div class="card-body">
+        {% for category in group.categories %}
+        {% if forloop.first != true %}
+            <hr />
+        {% endif %}
+        <h2>{{ category.name }}</h2>
+        {% include projects-grid.html projects=category.projects %}
+        {% endfor %}
+    </div>
+</div>
+{% endfor %}
